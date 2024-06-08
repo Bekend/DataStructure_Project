@@ -70,23 +70,56 @@ class CircularLinkedList:
 
     @staticmethod
     def merge_sorted(list1, list2):
-        # Merge two sorted circular linked lists
+        def merge_sort(arr):
+            if len(arr) > 1:
+                mid = len(arr) // 2
+                left_half = arr[:mid]
+                right_half = arr[mid:]
+
+                merge_sort(left_half)
+                merge_sort(right_half)
+
+                i = j = k = 0
+
+                while i < len(left_half) and j < len(right_half):
+                    if left_half[i] < right_half[j]:
+                        arr[k] = left_half[i]
+                        i += 1
+                    else:
+                        arr[k] = right_half[j]
+                        j += 1
+                    k += 1
+
+                while i < len(left_half):
+                    arr[k] = left_half[i]
+                    i += 1
+                    k += 1
+
+                while j < len(right_half):
+                    arr[k] = right_half[j]
+                    j += 1
+                    k += 1
+
+            return arr
+
         result = CircularLinkedList()
+        nodes = []
+
         current1 = list1.head.next
-        current2 = list2.head.next
-        while current1 != list1.head and current2 != list2.head:
-            if current1.data <= current2.data:
-                result.append(current1.data)
-                current1 = current1.next
-            else:
-                result.append(current2.data)
-                current2 = current2.next
         while current1 != list1.head:
-            result.append(current1.data)
+            nodes.append(current1.data)
             current1 = current1.next
+
+        current2 = list2.head.next
         while current2 != list2.head:
-            result.append(current2.data)
+            nodes.append(current2.data)
             current2 = current2.next
+
+        nodes = merge_sort(nodes)
+
+        for data in nodes:
+            result.append(data)
+
         return result
 
 class Stack:
@@ -149,44 +182,44 @@ class Queue:
         self.list.display()
 
 # Example usage:
-cll = CircularLinkedList()
-cll.append(2)
-cll.append(3)
-cll.append(4)
-cll.append(5)
-cll.append(6)
-print("Original list:")
-cll.display()
-cll.remove_primes()
-print("List after removing primes:")
-cll.display()
-
-list1 = CircularLinkedList()
-list1.append(1)
-list1.append(3)
-list1.append(5)
-list2 = CircularLinkedList()
-list2.append(2)
-list2.append(4)
-list2.append(6)
-merged_list = CircularLinkedList.merge_sorted(list1, list2)
-print("Merged sorted list:")
-merged_list.display()
-
-stack = Stack()
-stack.push(10)
-stack.push(20)
-stack.push(30)
-print("Stack:")
-stack.display()
-print("Popped from stack:", stack.pop())
-stack.display()
-
-queue = Queue()
-queue.add(10)
-queue.add(20)
-queue.add(30)
-print("Queue:")
-queue.display()
-print("Deleted from queue:", queue.delete())
-queue.display()
+# cll = CircularLinkedList()
+# cll.append(2)
+# cll.append(3)
+# cll.append(4)
+# cll.append(5)
+# cll.append(6)
+# print("Original list:")
+# cll.display()
+# cll.remove_primes()
+# print("List after removing primes:")
+# cll.display()
+#
+# list1 = CircularLinkedList()
+# list1.append(1)
+# list1.append(3)
+# list1.append(5)
+# list2 = CircularLinkedList()
+# list2.append(2)
+# list2.append(4)
+# list2.append(6)
+# merged_list = CircularLinkedList.merge_sorted(list1, list2)
+# print("Merged sorted list:")
+# merged_list.display()
+#
+# stack = Stack()
+# stack.push(10)
+# stack.push(20)
+# stack.push(30)
+# print("Stack:")
+# stack.display()
+# print("Popped from stack:", stack.pop())
+# stack.display()
+#
+# queue = Queue()
+# queue.add(10)
+# queue.add(20)
+# queue.add(30)
+# print("Queue:")
+# queue.display()
+# print("Deleted from queue:", queue.delete())
+# queue.display()

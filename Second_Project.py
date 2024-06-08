@@ -165,31 +165,31 @@ def prefix_to_infix(prefix, print_messages=True):
 
 
 # Example usage
-infix_expression = "(A+B)*C-D"
-postfix_expression = infix_to_postfix(infix_expression)
-prefix_expression = infix_to_prefix(infix_expression)
-os.system('cls')
-print("\n\n\nInfix expression:", infix_expression)
-print("Postfix expression:", postfix_expression)
-print("Prefix expression:", prefix_expression)
-
-
-print("\n\n\nPostfix to Infix:\n")
-postfix2infix = postfix_to_infix(postfix_expression)
-print("\n\n\nPostfix to Prefix:\n")
-postfix2prefix = postfix_to_prefix(postfix_expression)
-print("\n\n\nPrefix to Infix:\n")
-prefix2infix = prefix_to_infix(prefix_expression)
-print("\n\n\nPrefix to Postfix:\n")
-prefix2postfix = prefix_to_postfix(prefix_expression)
-print("\n\n\nIntfix to Postfix:\n")
-infix2postfix = infix_to_postfix(infix_expression)
-print("\n\n\nInfix to Prefix:\n")
-infix2prefix = infix_to_prefix(infix_expression)
-
-print("\n\n\nPostfix expression from infix:", infix2postfix)
-print("Postfix expression from prefix:", prefix2postfix)
-print("Prefix expression from postfix:", postfix2prefix)
-print("Prefix expression from infix:", infix2prefix)
-print("Infix expression from prefix:", prefix2infix)
-print("Infix expression from postfix:", postfix2infix)
+# infix_expression = "(A+B)*C-D"
+# postfix_expression = infix_to_postfix(infix_expression)
+# prefix_expression = infix_to_prefix(infix_expression)
+# os.system('cls')
+# print("\n\n\nInfix expression:", infix_expression)
+# print("Postfix expression:", postfix_expression)
+# print("Prefix expression:", prefix_expression)
+#
+#
+# print("\n\n\nPostfix to Infix:\n")
+# postfix2infix = postfix_to_infix(postfix_expression)
+# print("\n\n\nPostfix to Prefix:\n")
+# postfix2prefix = postfix_to_prefix(postfix_expression)
+# print("\n\n\nPrefix to Infix:\n")
+# prefix2infix = prefix_to_infix(prefix_expression)
+# print("\n\n\nPrefix to Postfix:\n")
+# prefix2postfix = prefix_to_postfix(prefix_expression)
+# print("\n\n\nIntfix to Postfix:\n")
+# infix2postfix = infix_to_postfix(infix_expression)
+# print("\n\n\nInfix to Prefix:\n")
+# infix2prefix = infix_to_prefix(infix_expression)
+#
+# print("\n\n\nPostfix expression from infix:", infix2postfix)
+# print("Postfix expression from prefix:", prefix2postfix)
+# print("Prefix expression from postfix:", postfix2prefix)
+# print("Prefix expression from infix:", infix2prefix)
+# print("Infix expression from prefix:", prefix2infix)
+# print("Infix expression from postfix:", postfix2infix)
